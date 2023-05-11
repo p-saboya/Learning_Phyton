@@ -1,0 +1,68 @@
+# rock paper scissors game - Incrementally
+import random
+#options with tuple
+
+options = ("rock", "paper", "scissors")
+
+computer_wins = 0
+user_wins = 0 
+rounds = input ("How many rounds do you want to play (Please use a positive number) => ")
+i = 0
+while True:
+  if (len(str(rounds)) < 1 or str(rounds).isalpha() or int(rounds) <= 0):
+    print("Please enter a valid option")
+    print("rounds",rounds)
+    print("rounds type",type(rounds))    
+    rounds = input ("How many rounds do you want to play (Please use a positive number) => ")
+    continue
+  else:
+    rounds = int(rounds)
+    print("rounds",rounds)
+    print("i",i)
+    for i in range(1,rounds):
+      print("rounds",rounds)
+      print("type round",type(rounds))
+      #print("i",i) 
+      user_option = input ("Chose the option: rock, paper, scissors => ") 
+      user_option = user_option.lower()
+      if ((user_option == options[-1]) or (user_option == options[-2]) or (user_option == options[-3])):   
+        print('*' * 10)
+        print('Round ', (i+1))
+        print('*' * 10)
+        print("user option => ",user_option)
+        # To do that the option of the computer random, we import random module at the begining
+        ''''computer_option = random.choice(options) # It could be a tuple or a list
+        print("computer option => ", computer_option)
+        if user_option == computer_option:
+          print("score draw")
+        elif user_option == "rock":
+          if computer_option == "paper":
+            computer_wins += 1
+            print("paper wins rock, computer wins!")
+          else:
+            print("rock wins scissor, user wins!")
+            user_wins += 1 
+        elif user_option == "paper":
+          if computer_option == "rock":
+            print("paper wins rock, user wins!")
+            user_wins += 1 
+          else:
+            print("scissors wins rock, computer wins!")
+            computer_wins += 1
+        elif user_option == "scissors":
+          if computer_option == "rock":
+            print("rock wins scissor, computer wins!")
+            computer_wins += 1
+          else:
+            print("scissors wins paper, user wins!")
+            user_wins += 1 
+      else: #replaced with the fits if aboys user option
+        print("error")
+            print('*' * 10)  
+            print(f"User record!, {user_wins}, computer record, {computer_wins}")
+            print('*' * 10)
+            i += 1 
+            print("i sumado", i)
+            break'''
+      else:
+        print("Please enter a valid option")
