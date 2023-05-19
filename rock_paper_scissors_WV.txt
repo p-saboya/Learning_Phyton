@@ -1,0 +1,44 @@
+# rock paper scissors game - Incrementally
+import random
+#options with tuple
+
+options = ("rock", "paper", "scissors")
+
+computer_wins = 0
+user_wins = 0 
+rounds = 5 
+
+user_option = input ("Chose the option: rock, paper, scissors => ")
+user_option = user_option.lower()
+print("user option => ",user_option)
+
+# To do that the option of the computer random, we import random module at the begining
+# computer_option = "paper"
+computer_option = random.choice(options) # It could be a tuple or a list
+print("computer option => ", computer_option)
+
+if user_option == computer_option:
+  print("score draw")
+elif user_option == "rock":
+  if computer_option == "paper":
+    computer_wins += 1
+    print("paper wins rock, computer wins!")
+  else:
+    print("rock wins scissor, user wins!")
+    user_wins += 1 
+elif user_option == "paper":
+  if computer_option == "rock":
+    print("paper wins rock, user wins!")
+    user_wins += 1 
+  else:
+    print("scissors wins rock, computer wins!")
+    computer_wins += 1
+elif user_option == "scissors":
+  if computer_option == "rock":
+    print("rock wins scissor, computer wins!")
+    computer_wins += 1
+  else:
+    print("scissors wins paper, user wins!")
+    user_wins += 1 
+else:
+  print("error")
